@@ -1,6 +1,14 @@
-var path = require('path')
+const path = require('path')
 const express = require('express')
+const dotenv = require('dotenv');
+dotenv.config();
 const mockAPIResponse = require('./mockAPI.js')
+const aylien = require("aylien_textapi");
+// set aylien API credentias
+const textapi = new aylien({
+    application_id: process.env.API_ID,
+    application_key: process.env.API_KEY
+});
 
 const app = express()
 const port = 8080
