@@ -1,7 +1,7 @@
 
-import { handleSubmit } from './js/formHandler'
+import onSubmit from './js/onSubmit'
 import './styles/styles.scss'
 
 export {
-    handleSubmit
+    onSubmit
 }

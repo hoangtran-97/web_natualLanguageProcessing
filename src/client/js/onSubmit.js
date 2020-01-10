@@ -1,5 +1,5 @@
 import postData from "./postData"
-const handleSubmit = async (event) => {
+const onSubmit = async (event) => {
     event.preventDefault()
     const textInput = document.getElementById('textData').value
     const textData = {}
@@ -9,4 +9,4 @@ const handleSubmit = async (event) => {
 }
 
 
-export { handleSubmit }
+export default onSubmit
