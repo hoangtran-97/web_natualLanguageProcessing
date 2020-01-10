@@ -5,7 +5,6 @@ const dotenv = require('dotenv');
 const cors = require("cors");
 var bodyParser = require('body-parser')
 dotenv.config();
-const mockAPIResponse = require('./mockAPI.js')
 const aylien = require("aylien_textapi");
 // set aylien API credentias
 const textapi = new aylien({
@@ -14,25 +13,12 @@ const textapi = new aylien({
 });
 
 const app = express()
+const port = 8081
 app.use(bodyParser.json())
 app.use(cors());
-const port = 8081
-
 app.use(express.static('dist'))
-
-console.log(__dirname)
-
-app.get('/', function (req, res) {
-    res.sendFile('dist/index.html')
-})
-
-
 app.listen(port, function () {
     console.log(`Example app listening on port ${port}!`)
-})
-
-app.get('/test', function (req, res) {
-    res.send(mockAPIResponse)
 })
 
 app.get("/all", getAll)
