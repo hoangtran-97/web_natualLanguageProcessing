@@ -39,8 +39,9 @@ app.get("/all", getAll)
 app.post("/sentiment", postSentiment)
 
 function postSentiment(request, response) {
+    console.log(request.body)
     textapi.sentiment({
-        'text': request.body
+        'text': request.body.text
     }, function (error, response) {
         if (error === null) {
             console.log(response);
