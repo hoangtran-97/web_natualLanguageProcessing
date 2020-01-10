@@ -1,3 +1,4 @@
+const projectData = {};
 const path = require('path')
 const express = require('express')
 const dotenv = require('dotenv');
@@ -33,3 +34,20 @@ app.listen(port, function () {
 app.get('/test', function (req, res) {
     res.send(mockAPIResponse)
 })
+
+app.get("/all", getAll)
+app.post("/sentiment", postSentiment)
+
+function postSentiment(request, response) {
+    textapi.sentiment({
+        'text': request.body
+    }, function (error, response) {
+        if (error === null) {
+            console.log(response);
+            projectData["text"] = response
+        }
+    });
+}
+function getAll(request, response) {
+    response.send(projectData)
+}

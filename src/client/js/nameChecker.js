@@ -8,8 +8,8 @@ function checkForName(inputText) {
         "Georgiou"
     ]
 
-    if(names.includes(inputText)) {
-        alert("Welcome, Captain!")
+    if (names.includes(inputText)) {
+        console.log("Welcome, Captain!")
     }
 }
 
