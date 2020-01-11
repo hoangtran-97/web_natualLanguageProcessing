@@ -1,4 +1,5 @@
 const projectData = {};
+let latestResponse = {}
 const path = require('path')
 const express = require('express')
 const dotenv = require('dotenv');
@@ -30,10 +31,12 @@ function postSentiment(request, response) {
         'text': request.body.text
     }, function (error, response) {
         if (error === null) {
-            console.log(response);
+            console.log("response", response)
+            latestResponse = response
             projectData["text"] = response
         }
     });
+    response.send(latestResponse)
 }
 function getAll(request, response) {
     response.send(projectData)
