@@ -1,2 +1,0 @@
-import onSubmit from "../src/client/js/onSubmit"
-import postData from "../src/client/js/postData"
