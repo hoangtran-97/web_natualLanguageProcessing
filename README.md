@@ -7,7 +7,7 @@ git checkout master
 ```
 ## Features:
 - [X] Webpack
-- [X] Configured with Webpack 
+- [X] Configured with Webpack dev server 
 - [X] Configured with Service worker for offline caching. 
 - [X] Tested with Jest
 - [X] Back-end Express server with POST and GET route to write and read data.
